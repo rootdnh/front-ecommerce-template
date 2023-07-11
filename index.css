@@ -7,15 +7,15 @@
 
 :root {
   --bg-default: "#feee";
-  --primary: rgb(66, 39, 160)
+  --primary: rgb(66, 39, 160);
+  
 
 }
 body {
   width: 100%;
-  background-color: var(--bg-default);
+  background-color: #feee; /* Mobile View não suporta var()*/
   overflow-x: hidden;
 }
-
 
 /* Header start */
 
@@ -165,7 +165,7 @@ input[type="radio"] {
 .banner-2,
 .banner-3 {
   display: flex;
-  width: 100vw;
+  width: 100%;
   height: 600px;
   padding: 0px 50px;
   align-items: center;
@@ -324,3 +324,74 @@ footer {
   transform: scale(1.1);
 }
 /* Footer finish */
+
+
+/* start Responsive Header */ 
+@media screen and (max-width: 850px){
+  body::-webkit-scrollbar {
+    width: 0px;
+  }
+  .header {
+    height: 50px;
+  }
+  .header nav,
+  .search-bar {
+    display: none;
+  }
+ .banner-1,
+ .banner-2,
+ .banner-3 {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 500px;
+  padding-top: 80px;
+  align-items: center;
+  justify-content: center;
+  
+}
+radio-1:checked ~  .slider.first {
+  margin-left: 0%;
+}
+#radio-2:checked ~  .slider.first  {
+  margin-left: -100%;
+}
+
+#radio-3:checked ~  .slider.first  {
+  margin-left: -200%;
+}
+
+.banner-container p,
+.banner-container h1,
+.banner-container span {
+  width: 200px;
+  text-align: center;
+}
+
+
+.banner-container > div:first-child h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+
+}
+.banner-container > div:first-child p {
+  color: white;
+  font-weight: bold;
+}
+
+.banner-container > div:first-child span {
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.banner-container > div:last-child img{
+  width: 120px;
+  margin-bottom: 20px;
+}
+.tab-list > button {
+  margin-bottom: 10px;
+}
+}
+/* finish Responsive Header */
